@@ -1,0 +1,13 @@
+C:\Users\solom\source\repos\Weather\Weather\bin\Debug\Weather.exe.config
+C:\Users\solom\source\repos\Weather\Weather\bin\Debug\Weather.exe
+C:\Users\solom\source\repos\Weather\Weather\bin\Debug\Weather.pdb
+C:\Users\solom\source\repos\Weather\Weather\bin\Debug\Newtonsoft.Json.dll
+C:\Users\solom\source\repos\Weather\Weather\bin\Debug\Newtonsoft.Json.xml
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.csprojAssemblyReference.cache
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.Form1.resources
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.Properties.Resources.resources
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.csproj.GenerateResource.cache
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.csproj.CoreCompileInputs.cache
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.csproj.CopyComplete
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.exe
+C:\Users\solom\source\repos\Weather\Weather\obj\Debug\Weather.pdb
