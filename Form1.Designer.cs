@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.lbl_cityname = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_units = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -42,7 +41,8 @@
             this.lbl_humidity = new System.Windows.Forms.Label();
             this.lbl_lat = new System.Windows.Forms.Label();
             this.lbl_lon = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.search_box = new System.Windows.Forms.ComboBox();
+            this.btn_search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // printPreviewDialog1
@@ -66,18 +66,6 @@
             this.lbl_cityname.TabIndex = 0;
             this.lbl_cityname.Text = "filler";
             this.lbl_cityname.Click += new System.EventHandler(this.Label1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(511, 270);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // lbl_units
             // 
@@ -183,11 +171,32 @@
             this.lbl_lon.TabIndex = 12;
             this.lbl_lon.Text = "Долгота";
             // 
+            // search_box
+            // 
+            this.search_box.FormattingEnabled = true;
+            this.search_box.Location = new System.Drawing.Point(400, 27);
+            this.search_box.Name = "search_box";
+            this.search_box.Size = new System.Drawing.Size(121, 21);
+            this.search_box.TabIndex = 13;
+            this.search_box.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(530, 27);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(58, 21);
+            this.btn_search.TabIndex = 14;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.search_box);
             this.Controls.Add(this.lbl_lon);
             this.Controls.Add(this.lbl_lat);
             this.Controls.Add(this.lbl_humidity);
@@ -198,13 +207,11 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lbl_units);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_cityname);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "c";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +221,6 @@
 
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label lbl_cityname;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_units;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
@@ -225,6 +231,8 @@
         private System.Windows.Forms.Label lbl_humidity;
         private System.Windows.Forms.Label lbl_lat;
         private System.Windows.Forms.Label lbl_lon;
+        private System.Windows.Forms.ComboBox search_box;
+        private System.Windows.Forms.Button btn_search;
     }
 }
 
