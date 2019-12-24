@@ -41,8 +41,9 @@
             this.lbl_humidity = new System.Windows.Forms.Label();
             this.lbl_lat = new System.Windows.Forms.Label();
             this.lbl_lon = new System.Windows.Forms.Label();
-            this.search_box = new System.Windows.Forms.ComboBox();
+            this.search_box = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // printPreviewDialog1
@@ -82,7 +83,8 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(27, 146);
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(27, 150);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(69, 17);
             this.radioButton1.TabIndex = 4;
@@ -94,7 +96,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(27, 169);
+            this.radioButton2.Location = new System.Drawing.Point(27, 173);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(82, 17);
             this.radioButton2.TabIndex = 5;
@@ -173,12 +175,10 @@
             // 
             // search_box
             // 
-            this.search_box.FormattingEnabled = true;
             this.search_box.Location = new System.Drawing.Point(400, 27);
             this.search_box.Name = "search_box";
-            this.search_box.Size = new System.Drawing.Size(121, 21);
+            this.search_box.Size = new System.Drawing.Size(121, 20);
             this.search_box.TabIndex = 13;
-            this.search_box.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // btn_search
             // 
@@ -190,11 +190,22 @@
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(400, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "label3";
+            this.label3.Click += new System.EventHandler(this.Label3_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.search_box);
             this.Controls.Add(this.lbl_lon);
@@ -231,8 +242,9 @@
         private System.Windows.Forms.Label lbl_humidity;
         private System.Windows.Forms.Label lbl_lat;
         private System.Windows.Forms.Label lbl_lon;
-        private System.Windows.Forms.ComboBox search_box;
+        private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Label label3;
     }
 }
 

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Device.Location;
 using System.Drawing;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -48,10 +50,11 @@ namespace Weather
                     fillLables(output);
                 }
                 catch (WebException e) {
-                    lbl_cityname.Text = "City not found";
+                    lbl_cityname.Text = e.Message;
                 }
             }
         }
+
         void fillLables(WeatherInfo.root output)
         {
             lbl_cityname.Text = string.Format("{0} {1}", output.name, output.sys.country);
@@ -60,11 +63,14 @@ namespace Weather
             lbl_humidity.Text = string.Format("{0}%", output.main.humidity);
             lbl_wind.Text = string.Format("{0} м/с", output.wind.speed);
         }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             Watcher = new GeoCoordinateWatcher();
-
+            
             Watcher.StatusChanged += Watcher_StatusChanged;
+
 
             Watcher.Start();
         }
@@ -111,7 +117,22 @@ namespace Weather
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbl_temp.Text == "*") return;
+            double arg = Convert.ToDouble(lbl_temp.Text);
+            double result;
+            if (units == "metric")
+            {
+                lbl_units.Text = "\u00B0F";
+                units = "imperial";
+                result = (arg * 9) / 5 + 32;
+            }
+            else
+            {
+                lbl_units.Text = "\u00B0C";
+                units = "metric";
+                result = (arg - 32) * 5 / 9;
+            }
+            lbl_temp.Text = result.ToString();
         }
 
         private void Lbl_temp_Click(object sender, EventArgs e)
@@ -131,7 +152,6 @@ namespace Weather
 
         private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void Lbl_lan_Click(object sender, EventArgs e)
@@ -139,38 +159,15 @@ namespace Weather
 
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            List<string> listCities = new List<string>();
-           
-            try
-            {
-                StringBuilder builder = new StringBuilder();
-                
-                InputStream is = getResources().openRawResource(R.raw.city_list);
-                GZIPInputStream gzipInputStream = new GZIPInputStream(is);
-                InputStreamReader reader = new InputStreamReader(gzipInputStream);
-                BufferedReader in = new BufferedReader(reader);
-                String readed;
-                while ((readed = in.readLine()) != null) {
-                    builder.append(readed);
-                }
-                listCities = new Gson().fromJson(builder.toString(), new TypeToken<List<String>>()
-                {
-                }.getType());
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
-           */
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             string search = search_box.Text;
             getWeather(search);
+        }
+
+        private void Label3_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
     }
