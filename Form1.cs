@@ -26,33 +26,31 @@ namespace Weather
 
 
         void getWeather(double lat,double lon) {
-            using (WebClient web = new WebClient())
-            {
                 string url = string.Format("https://api.openweathermap.org/data/2.5/weather?lat={0}&lon={1}&units={2}&appid={3}",lat,lon, units, APIID);
-                var json = web.DownloadString(url);
-                var result = JsonConvert.DeserializeObject<WeatherInfo.root>(json);
-                WeatherInfo.root output = result;
-                lbl_cityname.Text = string.Format("{0} {1}", output.name, output.sys.country);
-                lbl_units.Text = "\u00B0C";
-                lbl_temp.Text = string.Format("{0}", output.main.temp);
-                lbl_humidity.Text = string.Format("{0}%", output.main.humidity);
-                lbl_wind.Text = string.Format("{0} м/с", output.wind.speed);
+                createQuery(url);
             }
-        }
         void getWeather(string cityName)
+        {
+
+            string url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=" + "metric" + "&appid=" + APIID;
+            createQuery(url);
+        }
+        void createQuery(string url)
         {
             using (WebClient web = new WebClient())
             {
-                string url = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=" + "metric" + "&appid=" + APIID;
                 var json = web.DownloadString(url);
                 var result = JsonConvert.DeserializeObject<WeatherInfo.root>(json);
                 WeatherInfo.root output = result;
-                lbl_cityname.Text = string.Format("{0} {1}", output.name, output.sys.country);
-                lbl_units.Text = "\u00B0C";
-                lbl_temp.Text = string.Format("{0}", output.main.temp);
-                lbl_humidity.Text = string.Format("{0}%", output.main.humidity);
-                lbl_wind.Text = string.Format("{0} м/с", output.wind.speed);
+                fillLables(output);
             }
+        }
+        void fillLables(WeatherInfo.root output) {
+            lbl_cityname.Text = string.Format("{0} {1}", output.name, output.sys.country);
+            lbl_units.Text = "\u00B0C";
+            lbl_temp.Text = string.Format("{0}", output.main.temp);
+            lbl_humidity.Text = string.Format("{0}%", output.main.humidity);
+            lbl_wind.Text = string.Format("{0} м/с", output.wind.speed);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
