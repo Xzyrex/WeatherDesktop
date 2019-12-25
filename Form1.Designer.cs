@@ -44,6 +44,8 @@
             this.search_box = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // printPreviewDialog1
@@ -63,28 +65,26 @@
             this.lbl_cityname.Location = new System.Drawing.Point(19, 27);
             this.lbl_cityname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_cityname.Name = "lbl_cityname";
-            this.lbl_cityname.Size = new System.Drawing.Size(93, 46);
+            this.lbl_cityname.Size = new System.Drawing.Size(135, 46);
             this.lbl_cityname.TabIndex = 0;
-            this.lbl_cityname.Text = "filler";
-            this.lbl_cityname.Click += new System.EventHandler(this.Label1_Click);
+            this.lbl_cityname.Text = "Город";
             // 
             // lbl_units
             // 
             this.lbl_units.AutoSize = true;
             this.lbl_units.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl_units.Location = new System.Drawing.Point(119, 84);
+            this.lbl_units.Location = new System.Drawing.Point(136, 84);
             this.lbl_units.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_units.Name = "lbl_units";
-            this.lbl_units.Size = new System.Drawing.Size(49, 46);
+            this.lbl_units.Size = new System.Drawing.Size(0, 46);
             this.lbl_units.TabIndex = 2;
-            this.lbl_units.Text = "C";
-            this.lbl_units.Click += new System.EventHandler(this.Label2_Click);
+            
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(27, 150);
+            this.radioButton1.Location = new System.Drawing.Point(26, 157);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(69, 17);
             this.radioButton1.TabIndex = 4;
@@ -96,14 +96,14 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(27, 173);
+            this.radioButton2.Location = new System.Drawing.Point(26, 180);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(82, 17);
             this.radioButton2.TabIndex = 5;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Фаренгейт";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
+            
             // 
             // lbl_temp
             // 
@@ -111,10 +111,9 @@
             this.lbl_temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lbl_temp.Location = new System.Drawing.Point(19, 84);
             this.lbl_temp.Name = "lbl_temp";
-            this.lbl_temp.Size = new System.Drawing.Size(35, 46);
+            this.lbl_temp.Size = new System.Drawing.Size(0, 46);
             this.lbl_temp.TabIndex = 6;
-            this.lbl_temp.Text = "*";
-            this.lbl_temp.Click += new System.EventHandler(this.Lbl_temp_Click);
+            
             // 
             // label2
             // 
@@ -133,45 +132,38 @@
             this.label1.Size = new System.Drawing.Size(66, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Влажность:";
-            this.label1.Click += new System.EventHandler(this.Label1_Click_2);
             // 
             // lbl_wind
             // 
             this.lbl_wind.AutoSize = true;
             this.lbl_wind.Location = new System.Drawing.Point(306, 110);
             this.lbl_wind.Name = "lbl_wind";
-            this.lbl_wind.Size = new System.Drawing.Size(63, 13);
+            this.lbl_wind.Size = new System.Drawing.Size(0, 13);
             this.lbl_wind.TabIndex = 9;
-            this.lbl_wind.Text = "Влажность";
-            this.lbl_wind.Click += new System.EventHandler(this.Label3_Click);
             // 
             // lbl_humidity
             // 
             this.lbl_humidity.AutoSize = true;
             this.lbl_humidity.Location = new System.Drawing.Point(332, 84);
             this.lbl_humidity.Name = "lbl_humidity";
-            this.lbl_humidity.Size = new System.Drawing.Size(63, 13);
+            this.lbl_humidity.Size = new System.Drawing.Size(0, 13);
             this.lbl_humidity.TabIndex = 10;
-            this.lbl_humidity.Text = "Влажность";
             // 
             // lbl_lat
             // 
             this.lbl_lat.AutoSize = true;
-            this.lbl_lat.Location = new System.Drawing.Point(260, 150);
+            this.lbl_lat.Location = new System.Drawing.Point(304, 157);
             this.lbl_lat.Name = "lbl_lat";
-            this.lbl_lat.Size = new System.Drawing.Size(46, 13);
+            this.lbl_lat.Size = new System.Drawing.Size(0, 13);
             this.lbl_lat.TabIndex = 11;
-            this.lbl_lat.Text = "Щирота";
-            this.lbl_lat.Click += new System.EventHandler(this.Lbl_lan_Click);
             // 
             // lbl_lon
             // 
             this.lbl_lon.AutoSize = true;
-            this.lbl_lon.Location = new System.Drawing.Point(260, 173);
+            this.lbl_lon.Location = new System.Drawing.Point(314, 180);
             this.lbl_lon.Name = "lbl_lon";
-            this.lbl_lon.Size = new System.Drawing.Size(50, 13);
+            this.lbl_lon.Size = new System.Drawing.Size(0, 13);
             this.lbl_lon.TabIndex = 12;
-            this.lbl_lon.Text = "Долгота";
             // 
             // search_box
             // 
@@ -188,23 +180,41 @@
             this.btn_search.TabIndex = 14;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(400, 251);
+            this.label3.Location = new System.Drawing.Point(259, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 15;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.Label3_Click_1);
+            this.label3.Text = "Долгота:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(258, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Широта:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 141);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Шкала";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(600, 223);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.search_box);
@@ -221,7 +231,7 @@
             this.Controls.Add(this.lbl_cityname);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "c";
+            this.Text = "Weather";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,6 +255,8 @@
         private System.Windows.Forms.TextBox search_box;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 

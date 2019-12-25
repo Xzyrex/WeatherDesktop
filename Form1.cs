@@ -98,22 +98,6 @@ namespace Weather
             }
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void Label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void RadioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -135,39 +119,5 @@ namespace Weather
             lbl_temp.Text = result.ToString();
         }
 
-        private void Lbl_temp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RadioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void Lbl_lan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            string search = search_box.Text;
-            getWeather(search);
-        }
-
-        private void Label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
     }
